@@ -19,12 +19,12 @@ internal class Program {
         Menu();
     }
     static void Size() {
-        Write("Enter size:\n1: Small [£3.50]\n2: Medium [£5]\n3: Large [£7.25]");
+        Write("Enter size:\n1: Small [£3.50]\n2: Medium [£5]\n3: Large [£7.25]\n% ");
         price+=ReadLine()!.ToLower() switch {
-            "small" => 3.5,
-            "medium" => 5,
-            "large" => 7.25,
-            _ => throw new ArgumentNullException("\x1b[91mERROR:\x1b[0m ANSWER IS INVALID"),
+            "small"=>3.5,
+            "medium"=>5,
+            "large"=>7.25,
+            _=>throw new ArgumentNullException("\x1b[91mERROR:\x1b[0m ANSWER IS INVALID"),
         };
         Menu();
     }
@@ -41,6 +41,7 @@ internal class Program {
                 _=>throw new ArgumentNullException("\x1b[91mERROR:\x1b[0m ANSWER IS INVALID"),
             };
         }
+        Menu();
     }
     static void Sides() {
         Write("Enter a comma-separated list of sides:\n1: Garlic bread [£1.50]\n2: Fries [£2]\n3: Halloumi [£2.50]\n4: Mozzarella sticks [£2]\n5: Onion rings [£1.50]\n% ");
@@ -51,7 +52,7 @@ internal class Program {
             }
         }
         foreach (var i in sides) {
-            price += i switch {
+            price+=i switch {
                 "1"=>1.5,
                 "2"=>2,
                 "3"=>2.5,
@@ -60,5 +61,7 @@ internal class Program {
                 _=>throw new ArgumentNullException("\x1b[91mERROR:\x1b[0m ANSWER IS INVALID"),
             };
         }
+        Menu();
     }
+    //TODO: drinks & discount codes
 }
